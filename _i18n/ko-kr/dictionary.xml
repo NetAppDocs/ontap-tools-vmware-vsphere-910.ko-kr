@@ -1978,4 +1978,5 @@
   <block id="d9f3e338f746bd45726b28a4c9827ce1" category="sidebar">VSC 및 VASA 공급자 로그 파일</block>
   <block id="aac0bfa935c0891ccd1dbe6d4b9dc089" category="sidebar">데이터 저장소 및 VVol 보고서의 성능을 모니터링합니다</block>
   <block id="03e71fcc3229d7261096bb72d8cbfaf4" category="sidebar">ONTAP 툴 데이터 저장소 및 가상 머신 보고서 개요</block>
+  <block id="ed9018b2e8611a3d2c03bb6a205b9715" category="sidebar">VMware vSphere용 ONTAP 툴</block>
 </blocks>
