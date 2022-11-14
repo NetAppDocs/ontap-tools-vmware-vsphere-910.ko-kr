@@ -25,28 +25,8 @@
   <!-- Elastic Search -->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/searchkit/0.10.0/theme.css">
 
-  <!-- Controls AsciiDoctor Admonition Blocks -->
-  <link rel="stylesheet" type="text/css" href="/ko-kr/ontap-tools-vmware-vsphere-910/css/font-awesome.min.css">
-
-  <!-- Controls the shadow effect for search dropdown menu -->
-  <link rel="stylesheet" href="/ko-kr/ontap-tools-vmware-vsphere-910/css/boxshadowproperties.css">
-
-  <!-- NetApp CSS controls the technical content -->
-  <link rel="stylesheet" type="text/css" href="/ko-kr/ontap-tools-vmware-vsphere-910/css/netapp.css">
-
-  <!-- WWW CSS Content -->
-  <link rel="stylesheet" type="text/css" href="/ko-kr/ontap-tools-vmware-vsphere-910/css/www-luci-dotcom.min.css">
-  <link rel="stylesheet" type="text/css" href="/ko-kr/ontap-tools-vmware-vsphere-910/css/www-netapp-dotcom.css">
-  <link rel="stylesheet" href="/ko-kr/ontap-tools-vmware-vsphere-910/css/www-netapp-library-critical.min.css" media="all" >
-  <link rel="stylesheet" href="/ko-kr/ontap-tools-vmware-vsphere-910/css/www-netapp-library-non-critical.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="stylesheet" href="/ko-kr/ontap-tools-vmware-vsphere-910/css/www-netapp-library-global-header-footer.min.css">
-
-  <!-- NetApp IE Customizations -->
-  <link rel="stylesheet" href='/ko-kr/ontap-tools-vmware-vsphere-910/css/na-utility.css' type='text/css'>
-  <link rel="stylesheet" href='/ko-kr/ontap-tools-vmware-vsphere-910/css/na-sidebar.css' type='text/css'>
-  <link rel='stylesheet' href='/ko-kr/ontap-tools-vmware-vsphere-910/css/clouddocs.css' type='text/css'>
-  <link rel='stylesheet' href='/ko-kr/ontap-tools-vmware-vsphere-910/css/custom-dropdown.css' type='text/css'>
-  <link rel='stylesheet' href='/ko-kr/ontap-tools-vmware-vsphere-910/css/na-pagenav.css' type='text/css'>
+  <!-- Combined CSS -->
+  <link rel="stylesheet" type="text/css" href="/ko-kr/ontap-tools-vmware-vsphere-910/css/netappdocs.css">
 
   
   <link rel="stylesheet" href="/ko-kr/ontap-tools-vmware-vsphere-910/css/landing-page.css" type="text/css">
@@ -98,11 +78,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 
   <!-- Used for Product Family Page Sidebar Visibility --><!-- Used to import Promise for IE. Required for SearchKit -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/ko-kr/ontap-tools-vmware-vsphere-910/js/na-search.js'></script><script src='/ko-kr/ontap-tools-vmware-vsphere-910/js/na-pagenav.js'></script><link rel='stylesheet' href='/ko-kr/ontap-tools-vmware-vsphere-910/css/prism.css' type='text/css'>
-  <link rel='stylesheet' href='/ko-kr/ontap-tools-vmware-vsphere-910/css/prism-netapp.css' type='text/css'>
-
-
-  <script src='/ko-kr/ontap-tools-vmware-vsphere-910/js/na-utility.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/ko-kr/ontap-tools-vmware-vsphere-910/js/na-search.js'></script><script src='/ko-kr/ontap-tools-vmware-vsphere-910/js/na-pagenav.js'></script><script src='/ko-kr/ontap-tools-vmware-vsphere-910/js/na-utility.js'></script>
   <script src='/ko-kr/ontap-tools-vmware-vsphere-910/js/clouddocs.js'></script>
   <script src='/ko-kr/ontap-tools-vmware-vsphere-910/js/jquery.navgoco.min.js'></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
@@ -141,6 +117,17 @@
           $("#expandAll").click(function(e) {
               e.preventDefault();
               $("#mysidebar").navgoco('toggle', true);
+          });
+
+          $(".sidebar-nav-container").on("scroll", function() {
+            $.cookie("sidebarScroll", $(".sidebar-nav-container").scrollTop(), {
+              path    : "/ko-kr/ontap-tools-vmware-vsphere-910"  
+            });
+          });
+          $(function() {
+            if ($.cookie("sidebarScroll")) {
+              $(".sidebar-nav-container").scrollTop($.cookie("sidebarScroll"));
+            }
           });
 
       });
@@ -288,6 +275,8 @@
       </div>
 
       
+      
+      
       <div class="search-property-bar">
         <div id="search-demo-container" class="searchbox n-property-bar__search">
           <div id="react-search" 
@@ -334,6 +323,10 @@
           <a href="https://docs.netapp.com/zh-cn/ontap-tools-vmware-vsphere-910/configure/reference_set_ipv4_or_ipv6.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
         </li><li>
           <a href="https://docs.netapp.com/zh-tw/ontap-tools-vmware-vsphere-910/configure/reference_set_ipv4_or_ipv6.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/fr-fr/ontap-tools-vmware-vsphere-910/configure/reference_set_ipv4_or_ipv6.html" target="_self"><span translate="no" class="notranslate">Français</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/de-de/ontap-tools-vmware-vsphere-910/configure/reference_set_ipv4_or_ipv6.html" target="_self"><span translate="no" class="notranslate">Deutsch</span></a>
         </li></ul>
     </div><!-- End Language Selector -->
 
@@ -1148,7 +1141,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> 개념</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="ONTAP 도구 개요"
@@ -1178,7 +1171,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> 역할 기반 액세스 제어</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="ONTAP 도구에 대한 역할 기반 액세스 제어 개요"
@@ -1250,7 +1243,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> ONTAP 툴을 구축 및 업그레이드합니다</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="VMware vSphere용 ONTAP 툴의 신규 사용자를 위한 구축 워크플로우"
@@ -1287,7 +1280,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> ONTAP 툴 구축 요구사항</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="VSC용 포트 요구사항"
@@ -1324,7 +1317,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> ONTAP 툴 구축</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="ONTAP 도구를 다운로드하는 방법"
@@ -1368,7 +1361,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> ONTAP 툴을 업그레이드합니다</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="ONTAP 툴의 최신 릴리즈로 업그레이드하십시오"
@@ -1391,7 +1384,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> ONTAP 도구를 구성합니다</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="ONTAP 도구 구성 워크플로"
@@ -1407,7 +1400,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> ESXi 설정을 구성합니다</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="ESXi 서버 경로 다중화 및 시간 초과 설정을 구성합니다"
@@ -1430,7 +1423,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> 게스트 운영 체제를 구성합니다</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="게스트 운영 체제 스크립트를 구성합니다"
@@ -1474,7 +1467,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> ONTAP 도구 기본 설정 파일을 구성합니다</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="기본 설정 파일을 사용하여 IPv4 또는 IPv6를 설정합니다"
@@ -1511,7 +1504,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> 스토리지 시스템을 구성합니다</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="ONTAP 툴을 위한 스토리지 시스템 개요"
@@ -1569,7 +1562,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> 스토리지 용량 프로필을 구성합니다</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="스토리지 용량 프로필 개요"
@@ -1599,7 +1592,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> 데이터 저장소를 구성합니다</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="기존 데이터 저장소 프로비저닝"
@@ -1650,7 +1643,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> 데이터 저장소와 가상 머신을 보호합니다</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="스토리지 복제 어댑터를 활성화하여 데이터 저장소를 보호합니다"
@@ -1666,7 +1659,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> 재해 복구를 위한 스토리지 시스템 구성</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="SAN 및 NAS에 맞게 스토리지 시스템을 구성합니다"
@@ -1731,7 +1724,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> 보호 및 복구 사이트를 구성합니다</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="VM 스토리지 정책을 구성합니다"
@@ -1761,7 +1754,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> 보호 및 복구 사이트 리소스를 구성합니다</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="네트워크 매핑을 구성합니다"
@@ -1819,7 +1812,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> ONTAP 툴 관리</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="데이터 저장소를 관리합니다"
@@ -1828,7 +1821,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> 데이터 저장소를 관리합니다</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="추가 호스트에 데이터 저장소를 마운트합니다"
@@ -1879,7 +1872,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> 가상 머신 관리</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="가상 머신의 마이그레이션 또는 클론 생성 시 고려 사항"
@@ -1916,7 +1909,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> ONTAP 툴 유지보수 콘솔에 액세스합니다</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="ONTAP 툴 유지보수 콘솔 개요"
@@ -1967,7 +1960,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> 데이터 저장소 및 VVol 보고서의 성능을 모니터링합니다</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="ONTAP 툴 데이터 저장소 및 가상 머신 보고서 개요"
@@ -2007,6 +2000,7 @@
 </script>
 <!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
 <script>$("li.active").parents('li').toggleClass("active");</script>
+<script>$("#mysidebar li.active").parents('ul').css("display","block");</script>
 
 
   </div>
@@ -2196,11 +2190,7 @@
         <div class="n-footer__copyright">
           <ul class="n-footer__copyright-list">
             <li class="n-footer__copyright-link">
-              <span class="n-footer__fine-print">웹 사이트에 대한 피드백이 있으십니까?</span>
-              <a target="_self" href="javascript:netapp_mailto()">의견을 공유해 주십시오</a>
-            </li>
-            <li class="n-footer__copyright-link">
-              <a href="https://docs.netapp.com/ko-kr/announcements/">공지 사항</a>
+              <a target="_self" href="javascript:netapp_mailto()">이 페이지에 대한 피드백 보내기</a>
             </li>
           </ul>
         </div>
