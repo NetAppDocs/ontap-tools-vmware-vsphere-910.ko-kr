@@ -9,9 +9,9 @@ entries:
   - title: 데이터 저장소 크기 조정
     url: "/manage/task_resize_datastores.html"
   - title: VVOL 데이터 저장소를 편집합니다
-    url: "/manage/task_edit_a_vvols_datastore.html"
+    url: "/manage/task_edit_a_vvol_datastore.html"
   - title: VVOL 데이터 저장소에 스토리지를 추가합니다
-    url: "/manage/task_add_storage_to_a_vvols_datastore.html"
+    url: "/manage/task_add_storage_to_a_vvol_datastore.html"
   - title: VVOL 데이터 저장소에서 스토리지를 제거합니다
     url: "/manage/task_remove_storage_from_a_vvols_datastore.html"
   - title: VVOL 데이터 저장소를 마운트합니다
